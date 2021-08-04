@@ -6,8 +6,10 @@ import { H1 } from './RegisterStyles'
 import { Input } from './RegisterStyles'
 import { Select } from './RegisterStyles'
 import { Label } from './RegisterStyles'
+import axios from 'axios'
 
-export class Register extends React.Component{
+export class Register extends React.Component {
+
     render(){
         return <div>
             <Menu>
