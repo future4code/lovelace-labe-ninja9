@@ -3,7 +3,7 @@ import { Header } from './components/Header/Header'
 import { Home } from './components/Home/Home'
 import { Register } from './components/Register/Register'
 import { Cart } from './components/Cart/Cart'
-import styled from 'styled-components'
+
 
 class App extends React.Component {
 	state = {
@@ -31,7 +31,7 @@ class App extends React.Component {
 					forHome={this.forHome}
 				/>
 			default:
-				return <h2>ERRO</h2>
+				return <h2>Erro! Página não encontrada :(</h2>
 		}
 	}
 	forHome = () => {
@@ -46,7 +46,6 @@ class App extends React.Component {
 		this.setState({ currentScreen: 'cart' })
 	}
 
-
 	render() {
 		return <div>
 			<Header
@@ -56,7 +55,6 @@ class App extends React.Component {
 				/>
 				
 				{this.chooseScreen()}
-
 
 		</div>
 		
