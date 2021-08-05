@@ -15,7 +15,7 @@ export default class ListJobs extends React.Component {
      }
 
 
-     allJobs = () =>{
+     allJobs = (id) =>{
         axios.get (`${baseURL}/jobs`,{
             headers:{
                 Authorization:"96452e69-b6ae-4bb7-ba8a-b66303c06a59"
@@ -38,7 +38,8 @@ export default class ListJobs extends React.Component {
         const listJobs = this.state.jobs.map((user) => {
             return (
                 <div key={user.id}> 
-                <button onClick={() =>this.props.goToDetails(user.id)}> Ver Detalhes </button>
+                <button onClick={() => this.props.goToDetails(user.id)}> Ver Detalhes </button>
+                <button onClick={''}>Adicionar ao Carrinho</button>
                 {user.jobs}
                 <p>{user.title}</p>
                 <p>Preço:{user.price}</p>
@@ -50,7 +51,10 @@ export default class ListJobs extends React.Component {
     
     
     return (
-        <div>{listJobs} </div>
+        <div>
+            {listJobs} 
+       
+        </div>
            
         )
         
