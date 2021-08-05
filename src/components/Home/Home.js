@@ -4,20 +4,16 @@ import { keyframes } from 'styled-components'
 import { Header } from '../Header/Header'
 
 
-export default class Home extends React.Component {
+export class Home extends React.Component {
 state = {
-    details:'',
-    backToList:"",
-    jobs: [
-      {
-        id: "",
-        title: "",
-        description: "",
-        price: Number,
-        paymentMethods: [],
-        dueDate: ""
-      }]
+    jobs: [],
+    details: "",
+    toCart:"",
+
     }
+
+
+    O
 
  componentDidMount(){
      this.allJobs()
@@ -32,7 +28,7 @@ state = {
         })
         .then((res)=>{
         console.log(res.data)
-         this.setState({jobs: res.data})
+         this.setState({jobs: res.data.jobs})
         })
         .catch((err)=>{
             console.log(err)
@@ -44,12 +40,12 @@ state = {
     }
  
     render() {
-        const listaUsuarios = this.state.jobs.map((user) => {
+        const listJobs = this.state.jobs.map((user) => {
             return (
                 <div key={user.id}>
-                <h2> Lista de Serviços</h2>
+                <h2>Lista de Serviços{user.jobs}</h2>
                 <p>Título:{user.title}</p>
-               <p>Descrição:{user.descripition}</p>
+               <p>Descrição:{user.description}</p>
                <p>Forma de Pagamento:{user.paymentMethods}</p>
               <p>Preço:{user.price}</p>
               <p>Disponibilidade do Serviço:{user.dueDate}</p>
@@ -60,8 +56,15 @@ state = {
     
     
     return (
-        {listaUsuarios}
-    )
+        // <button onClick={() => this.changePage("list")}>Voltar para a Lista</button>
+        <div>{listJobs} </div>
+           
+        )
+        
+    
+           
+        
+    
   }
 
     
