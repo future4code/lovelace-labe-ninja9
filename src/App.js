@@ -54,7 +54,7 @@ export default class App extends React.Component {
 					forHome={this.forHome}
 				/>
 			default:
-				return <h2>ERRO</h2>
+				return <h2>Erro! Página não encontrada :(</h2>
 		}
 	}
 	forHome = () => {
@@ -69,7 +69,6 @@ export default class App extends React.Component {
 		this.setState({ currentScreen: 'cart' })
 	}
 
-
 	render() {
 		return <div>
 			<Header
@@ -79,7 +78,6 @@ export default class App extends React.Component {
 				/>
 				
 				{this.chooseScreen()}
-
 
 		</div>
 		
