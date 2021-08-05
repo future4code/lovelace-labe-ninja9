@@ -3,14 +3,30 @@ import { Header } from './components/Header/Header'
 import { Home } from './components/Home/Home'
 import { Register } from './components/Register/Register'
 import { Cart } from './components/Cart/Cart'
+import styled from 'styled-components'
+import { DetailJob } from './components/pages/DetailJob'
+import ListJobs from './components/pages/ListJobs'
 
-
-class App extends React.Component {
+export default class App extends React.Component {
 	state = {
-		currentScreen: 'home'
+		currentScreen: 'list',
+		clickDetailJob:''
+		
 	}
-
-	chooseScreen = () => {
+ 
+	
+	
+  goToDetails = (url) =>{
+	this.setState({currentScreen: 'details', clickDetailJob: url})
+	  
+  }
+  goToList = () =>{
+	this.setState({currentScreen: 'list',clickDetailJob:''})
+}
+  
+ 
+ 
+ chooseScreen = () => {
 		switch (this.state.currentScreen) {
 			case 'home':
 				return <Home
@@ -18,6 +34,13 @@ class App extends React.Component {
 					forRegister={this.forRegister}
 					forHome={this.forHome}
 				/>
+				case 'list':
+				return <ListJobs goToDetails = {this.goToDetails}
+				/>
+				case 'details':
+				return <DetailJob goToList={this.goToList} url={this.state.clickDetailJob}
+				/>
+
 			case 'register':
 				return <Register
 					forCart={this.forCart}
@@ -62,4 +85,4 @@ class App extends React.Component {
 	}
 }
 
-export default App
+

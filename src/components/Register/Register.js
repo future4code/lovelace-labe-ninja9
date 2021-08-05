@@ -66,7 +66,6 @@ export class Register extends React.Component {
     }
 
     render() {
-        
         return <div>
             <Menu>
                 <H1>Cadastro</H1>
