@@ -1,5 +1,7 @@
 ## Labeninja
 
+- O objetivo do projeto é criar um site em que os prestadores podem oferecer seus serviços livremente, enquanto as pessoas com demandas específicas podem encontrar perfis bem alinhados ao que precisam. 
+
 ### O que funciona
 - O site possui as seguintes páginas:  página destinada à criação dos serviços oferecido, página destinada à listagem e busca dessas ofertas e uma página destinada ao carrinho de serviços adquiridos.
 - É possível que o usuário cadastre um serviço e o mesmo será renderizado na página "Home".
