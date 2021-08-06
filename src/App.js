@@ -3,9 +3,7 @@ import { Header } from './components/Header/Header'
 import  Home  from './components/Home/Home'
 import { Register } from './components/Register/Register'
 import { Cart } from './components/Cart/Cart'
-import styled from 'styled-components'
-import { DetailJob } from './components/pages/DetailJob'
-import ListJobs  from './components/pages/ListJobs'
+import { DetailJob } from './components/DetailJob/DetailJob'
 
 export default class App extends React.Component {
     state = {
